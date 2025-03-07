@@ -4,5 +4,6 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="@radix-ui/colors" level="application" />
   </component>
 </module>
