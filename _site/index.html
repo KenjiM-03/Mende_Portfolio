@@ -5,18 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio </title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const texts = ["Kenji", "a Developer", "a Photographer", "a Creative"];
+            let index = 0;
+            let charIndex = 0;
+            const speed = 70;
+            const waitTime = 1500;
+            const element = document.querySelector("#typewriter");
+            const cursor = "_";
+
+            function type() {
+                if (charIndex < texts[index].length) {
+                    element.innerHTML = `I'm ${texts[index].substring(0, charIndex + 1)}${cursor}`;
+                    charIndex++;
+                    setTimeout(type, speed);
+                } else {
+                    setTimeout(erase, waitTime);
+                }
+            }
+
+            function erase() {
+                if (charIndex > 0) {
+                    element.innerHTML = `I'm ${texts[index].substring(0, charIndex - 1)}${cursor}`;
+                    charIndex--;
+                    setTimeout(erase, speed / 2);
+                } else {
+                    index = (index + 1) % texts.length;
+                    setTimeout(type, speed);
+                }
+            }
+
+            type();
+        });
+    </script>
 </head>
-<!--<body class=" bg-gradient-to-r from-white via-blue-500 to-green-400 bg-cover bg-center bg-no-repeat h-screen flex justify-center items-center text-white">-->
-<body class="bg-gradient-to-r from-blue-700 via-green-500 to-blue-400 bg-cover bg-center bg-no-repeat h-screen flex justify-center items-center text-white">
+<body class="bg-gradient-to-b from-white via-green-500 to-blue-400 bg-cover bg-center bg-no-repeat h-screen flex justify-center items-center text-white">
 
 <div class="bg-[#10233f] w-3/4 max-w-3xl rounded-2xl shadow-xl text-center p-10">
     <h1 class="text-4xl font-bold">
-        hi! <span class="text-blue-300"></span>
+        Hi! <span id="typewriter" class="text-blue-300"></span>
     </h1>
     <p class="text-lg text-gray-400 mt-2">developer</p>
 
-    <div class="grid grid-cols-5 gap-6 justify-items-center mt-10">
-
+    <div class="grid grid-cols-3 gap-12 justify-items-center mt-10">
         <div>
             <img src="info-icon.svg" alt="About" class="h-10 mx-auto">
             <p class="mt-2 text-sm">About</p>
@@ -29,12 +61,11 @@
             <img src="work-icon.svg" alt="Work" class="h-10 mx-auto">
             <p class="mt-2 text-sm">Certification</p>
         </div>
-<!---->
     </div>
 
     <footer class="mt-10">
         <div class="flex justify-center space-x-4">
-            <a href="#" class="text-gray-400 hover:text-white">Twitter</a>
+            <a href="#" class="text-gray-400 hover:text-white">LinkedIn</a>
             <a href="#" class="text-gray-400 hover:text-white">Instagram</a>
             <a href="#" class="text-gray-400 hover:text-white">GitHub</a>
         </div>
