@@ -56,14 +56,14 @@
             <p class="mt-2 text-sm">About</p>
         </button>
 
-        <button onclick="showModal('Projects', 'Here are my projects.')" class="flex flex-col items-center">
+        <button onclick="openProjectModal()" class="flex flex-col items-center">
             <svg width="40" height="40" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3.30902 1C2.93025 1 2.58398 1.214 2.41459 1.55279L1.05279 4.27639C1.01807 4.34582 1 4.42238 1 4.5V13C1 13.5523 1.44772 14 2 14H13C13.5523 14 14 13.5523 14 13V4.5C14 4.42238 13.9819 4.34582 13.9472 4.27639L12.5854 1.55281C12.416 1.21403 12.0698 1.00003 11.691 1.00003L7.5 1.00001L3.30902 1ZM5.5 7C5.22386 7 5 7.22386 5 7.5C5 7.77614 5.22386 8 5.5 8H9.5C9.77614 8 10 7.77614 10 7.5C10 7.22386 9.77614 7 9.5 7H5.5Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
             </svg>
             <p class="mt-2 text-sm">Projects</p>
         </button>
 
-        <button onclick="showModal('Certification', 'Here are my certifications.')" class="flex flex-col items-center">
+        <button onclick="openCertificationModal()" class="flex flex-col items-center">
             <svg width="40" height="40" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3.5 2C3.22386 2 3 2.22386 3 2.5V12.5C3 12.7761 3.22386 13 3.5 13H11.5C11.7761 13 12 12.7761 12 12.5V6H8.5C8.22386 6 8 5.77614 8 5.5V2H3.5Z" fill="currentColor"></path>
             </svg>
@@ -73,7 +73,7 @@
     <div id="aboutModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center">
         <div class="bg-white p-6 rounded-lg shadow-lg w-1/3 text-black relative">
             <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800">&times;</button>
-            <img src="profile.jpg" alt="Kenji's Profile" class="w-24 h-24 rounded-full mx-auto">
+            <img src="assets/profile.jpg" alt="Kenji's Profile" class="w-24 h-24 rounded-full mx-auto">
             <h2 class="text-lg font-bold mt-4">Kenji Azriel Mende</h2>
             <p class="text-sm text-gray-500">Developer | Photographer | Creative</p>
             <p class="mt-2">Passionate about coding and creativity, blending technology with artistry.</p>
@@ -85,6 +85,58 @@
             </ul>
             <h3 class="text-md font-semibold mt-4">Contact</h3>
             <p class="text-sm"><a href="mailto:kenji@example.com" class="text-blue-500">kenji@example.com</a></p>
+        </div>
+    </div>
+    <div id="projectModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-1/3 text-black relative border-4 border-blue-500">
+            <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800">&times;</button>
+            <img src="profile.jpg" alt="Kenji's Profile" class="w-24 h-24 rounded-full mx-auto border-4 border-blue-500">
+            <h2 class="text-lg font-bold mt-4 text-blue-600">Kenji Azriel Mende</h2>
+            <p class="text-sm text-gray-500">Developer | Photographer | Creative</p>
+            <h3 class="text-md font-semibold mt-4 text-blue-600">Notable Projects</h3>
+            <ul class="text-sm text-gray-700 bg-gray-100 p-4 rounded-lg shadow">
+                <li class="text-blue-700 font-bold">Prince Educational Supply Inventory System</li>
+                <li class="text-blue-700 font-bold">Grand Eagle Incorporated Attendance System</li>
+                <li class="text-black-700 font-bold"> For more Projects, Visit my Github</li>
+
+            </ul>
+            <h3 class="text-md font-semibold mt-4 text-blue-600">Skills</h3>
+            <ul class="text-sm text-gray-700">
+                <li><a href="#" class="text-blue-500">Web Development</a></li>
+                <li><a href="#" class="text-blue-500">Photography</a></li>
+                <li><a href="#" class="text-blue-500">Graphic Design</a></li>
+            </ul>
+            <h3 class="text-md font-semibold mt-4 text-blue-600">Contact</h3>
+            <p class="text-sm"><a href="mailto:kamende@mcm.edu.ph" class="text-blue-500">kamende@mcm.edu.ph</a></p>
+        </div>
+    </div>
+    <div id="certificationModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-1/3 text-black relative border-4 border-blue-500">
+            <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800">&times;</button>
+            <img src="profile.jpg" alt="Kenji's Profile" class="w-24 h-24 rounded-full mx-auto border-4 border-blue-500">
+            <h2 class="text-lg font-bold mt-4 text-blue-600">Kenji Azriel Mende</h2>
+            <p class="text-sm text-gray-500">Developer | Photographer | Creative</p>
+            <h3 class="text-md font-semibold mt-4 text-blue-600">Highlighted Certifications</h3>
+            <ul class="text-sm text-gray-700 bg-gray-100 p-4 rounded-lg shadow">
+                <li class="text-blue-700 font-bold">JLPT N5 Certified</li>
+                <li class="text-blue-700 font-bold">Agile Software Development: Clean Coding Practices</li>
+                <li class="text-blue-700 font-bold">
+                    Agile Software Development: Refactoring</li>
+                <li class="text-blue-700 font-bold">Agile Software Development: Clean Coding Practices</li>
+                <li class="text-blue-700 font-bold">Object Oriented Programming with C# (2018)</li>
+                <li class="text-blue-700 font-bold">CCNA: Introduction to Networks</li>
+                <li class="text-black-700 font-bold">Visit my LinkedIn for more Certifications</li>
+
+
+            </ul>
+            <h3 class="text-md font-semibold mt-4 text-blue-600">Skills</h3>
+            <ul class="text-sm text-gray-700">
+                <li><a href="#" class="text-blue-500">Web Development</a></li>
+                <li><a href="#" class="text-blue-500">Photography</a></li>
+                <li><a href="#" class="text-blue-500">Graphic Design</a></li>
+            </ul>
+            <h3 class="text-md font-semibold mt-4 text-blue-600">Contact</h3>
+            <p class="text-sm"><a href="mailto:kamende@mcm.edu.ph" class="text-blue-500">kamende@mcm.edu.ph</a></p>
         </div>
     </div>
 
@@ -111,14 +163,24 @@
         document.getElementById("aboutModal").classList.remove("hidden");
 
     }
+    function openProjectModal() {
+        document.getElementById("projectModal").classList.remove("hidden");
+    }
+    function openCertificationModal(){
+        document.getElementById("certificationModal").classList.remove("hidden");
+
+    }
     function showModal(title, content) {
         document.getElementById("modalTitle").innerText = title;
         document.getElementById("modalContent").innerText = content;
         document.getElementById("modal").classList.remove("hidden");
     }
     function closeModal() {
-        document.getElementById("modal").classList.add("hidden");
+        document.querySelectorAll('.fixed.inset-0').forEach(modal => {
+            modal.classList.add("hidden");
+        });
     }
+
 </script>
 
 </body>
